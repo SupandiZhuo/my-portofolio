@@ -280,7 +280,7 @@ const Homepage = () => {
                     </p>
                     <div className="project-links">
                       <a
-                        href={`${import.meta.env.BASE_URL}myfile.pdf`}
+                        href={`${import.meta.env.BASE_URL}MSA_Paper_Supandi.pdf`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="project-link paper"
