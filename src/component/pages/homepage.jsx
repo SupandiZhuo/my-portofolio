@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./navbar";
 import Separator from "./separator";
 import Separator2 from "./separator2";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faFileAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Homepage = () => {
   const canvasRef = useRef(null);
@@ -128,9 +128,9 @@ const Homepage = () => {
             });
           }
         },
-        { 
+        {
           threshold: 0.05,
-          rootMargin: '100px'
+          rootMargin: "100px",
         }
       );
       if (ref.current) observer.observe(ref.current);
@@ -200,10 +200,11 @@ const Homepage = () => {
               </div>
             </section>
             <Separator />
-            <section 
+            <section
               className={`skills ${skillIsVisible ? "visible" : ""}`}
-              ref={skillRef} 
-              id="skills">
+              ref={skillRef}
+              id="skills"
+            >
               <h2>Skills</h2>
               <div className="skill-container">
                 <div className="skill">
@@ -229,14 +230,18 @@ const Homepage = () => {
               </div>
             </section>
             <Separator />
-            <section 
+            <section
               className={`projects ${projectIsVisible ? "visible" : ""}`}
               ref={projectRef}
-              id="projects">
+              id="projects"
+            >
               <h2>My Projects</h2>
               <div className="projects-container">
                 <div className="project-card">
-                  <img src="./Project-Pic/CodeEasier.png" alt="CodeEasier App" />
+                  <img
+                    src="./Project-Pic/CodeEasier.png"
+                    alt="CodeEasier App"
+                  />
                   <div className="project-info">
                     <h3>CodeEasier</h3>
                     <p>
@@ -251,7 +256,10 @@ const Homepage = () => {
                         rel="noopener noreferrer"
                         className="project-link github"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="project-icon" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="project-icon"
+                        />
                         View Code
                       </a>
                     </div>
@@ -277,7 +285,10 @@ const Homepage = () => {
                         rel="noopener noreferrer"
                         className="project-link paper"
                       >
-                        <FontAwesomeIcon icon={faFileAlt} className="project-icon" />
+                        <FontAwesomeIcon
+                          icon={faFileAlt}
+                          className="project-icon"
+                        />
                         View Paper
                       </a>
                       <a
@@ -286,7 +297,10 @@ const Homepage = () => {
                         rel="noopener noreferrer"
                         className="project-link github"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="project-icon" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="project-icon"
+                        />
                         View Code
                       </a>
                     </div>
@@ -301,17 +315,24 @@ const Homepage = () => {
                   <div className="project-info">
                     <h3>Music Genre Classifier</h3>
                     <p>
-                      Research project that uses Reinforcement Learning to
-                      optimize factory production scheduling efficiently.
+                      Developed a machine learning model to classify music
+                      tracks into different genres based on audio features. This
+                      project strengthened my skills in data preprocessing,
+                      feature extraction, and exploratory data analysis, as I
+                      worked extensively with real-world audio data and handled
+                      large datasets efficiently.
                     </p>
                     <div className="project-links">
                       <a
-                        href="https://github.com/yourusername/ProductionAI"
+                        href="https://github.com/SupandiZhuo/music-genre-classsification.git"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="project-link github"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="project-icon" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="project-icon"
+                        />
                         View Code
                       </a>
                     </div>
@@ -325,8 +346,11 @@ const Homepage = () => {
                   <div className="project-info">
                     <h3>Task Manager</h3>
                     <p>
-                      Research project that uses Reinforcement Learning to
-                      optimize factory production scheduling efficiently.
+                      Built a task management application that helps users
+                      organize and track daily activities efficiently. The app
+                      allows users to create, update, and delete tasks, set
+                      priorities, and mark completion status, featuring a clean
+                      and responsive UI.
                     </p>
                     <div className="project-links">
                       <a
@@ -335,7 +359,10 @@ const Homepage = () => {
                         rel="noopener noreferrer"
                         className="project-link github"
                       >
-                        <FontAwesomeIcon icon={faGithub} className="project-icon" />
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          className="project-icon"
+                        />
                         View Code
                       </a>
                     </div>
@@ -344,16 +371,15 @@ const Homepage = () => {
               </div>
             </section>
             <Separator />
-            <section 
+            <section
               className={`contact ${contactIsVisible ? "visible" : ""}`}
               ref={contactRef}
-              id="contact">
+              id="contact"
+            >
               <h2>Connect With Me</h2>
               <div className="contact-container">
                 <div className="contact-content">
-                  <p>
-                    Let's connect! Find me on these platforms:
-                  </p>
+                  <p>Let's connect! Find me on these platforms:</p>
                   <div className="social-links">
                     <a
                       href="https://github.com/SupandiZhuo"
@@ -361,7 +387,10 @@ const Homepage = () => {
                       rel="noopener noreferrer"
                       className="social-link github"
                     >
-                      <FontAwesomeIcon icon={faGithub} className="social-icon" />
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className="social-icon"
+                      />
                       GitHub
                     </a>
                     <a
@@ -370,14 +399,20 @@ const Homepage = () => {
                       rel="noopener noreferrer"
                       className="social-link linkedin"
                     >
-                      <FontAwesomeIcon icon={faLinkedinIn} className="social-icon" />
+                      <FontAwesomeIcon
+                        icon={faLinkedinIn}
+                        className="social-icon"
+                      />
                       LinkedIn
                     </a>
                     <a
                       href="mailto:supandi@binus.ac.id"
                       className="social-link email"
                     >
-                      <FontAwesomeIcon icon={faEnvelope} className="social-icon" />
+                      <FontAwesomeIcon
+                        icon={faEnvelope}
+                        className="social-icon"
+                      />
                       Email
                     </a>
                   </div>
