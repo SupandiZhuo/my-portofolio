@@ -160,7 +160,7 @@ const Homepage = () => {
             >
               <div className="profile-container">
                 <img
-                  src="/profile-pic.jpg"
+                  src="./profile-pic.jpg"
                   alt="supandi"
                   className="profile-pic"
                 />
@@ -295,7 +295,7 @@ const Homepage = () => {
 
                 <div className="project-card">
                   <img
-                    src="/Project-Pic/MusicGenreClassifier.png"
+                    src="./Project-Pic/MusicGenreClassifier.png"
                     alt="Music Genre Classifier"
                   />
                   <div className="project-info">
@@ -319,7 +319,7 @@ const Homepage = () => {
                 </div>
                 <div className="project-card">
                   <img
-                    src="/Project-Pic/TaskManager.png"
+                    src="./Project-Pic/TaskManager.png"
                     alt="Production Schedule Optimization"
                   />
                   <div className="project-info">
