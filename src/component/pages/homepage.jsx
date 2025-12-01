@@ -33,10 +33,9 @@ const Homepage = () => {
         });
       }
 
-      // Add more particles if canvas got larger
       const desiredParticles = Math.min(
         50, // Maximum particles
-        Math.floor((canvas.width * canvas.height) / 20000) // Much larger area per particle
+        Math.floor((canvas.width * canvas.height) / 20000)
       );
 
       // Remove excess particles if needed
@@ -55,7 +54,7 @@ const Homepage = () => {
       constructor(x, y) {
         this.x = x !== undefined ? x : Math.random() * canvas.width;
         this.y = y !== undefined ? y : Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
+        this.size = Math.random() * 3 + 0.5;
         this.speedX = (Math.random() - 0.5) * 2;
         this.speedY = (Math.random() - 0.5) * 2;
         this.color = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.2})`;
@@ -65,9 +64,10 @@ const Homepage = () => {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x > canvas.width) this.x = 0;
+        if (this.x >= canvas.width) this.x = 0;
         else if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
+
+        if (this.y >= canvas.height) this.y = 0;
         else if (this.y < 0) this.y = canvas.height;
       }
 
@@ -88,14 +88,31 @@ const Homepage = () => {
     };
 
     const animate = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.01)";
+      ctx.fillStyle = "rgba(0, 0, 0, 1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
         particle.update();
         particle.draw();
       });
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.6z)";
+      ctx.lineWidth = 0.5;
 
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 100) {
+            // Hanya hubungkan partikel yang berdekatan
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -118,12 +135,10 @@ const Homepage = () => {
     useEffect(() => {
       const observer = new IntersectionObserver(
         ([entry]) => {
-          // Only trigger animation once
           if (entry.isIntersecting && !isVisible) {
-            // Small delay to ensure smooth animation
             requestAnimationFrame(() => {
               setIsVisible(true);
-              // Disconnect after animation is triggered
+
               observer.disconnect();
             });
           }
@@ -280,7 +295,9 @@ const Homepage = () => {
                     </p>
                     <div className="project-links">
                       <a
-                        href={`${import.meta.env.BASE_URL}document/MSA_Paper_Supandi.pdf`}
+                        href={`${
+                          import.meta.env.BASE_URL
+                        }document/MSA_Paper_Supandi.pdf`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="project-link paper"

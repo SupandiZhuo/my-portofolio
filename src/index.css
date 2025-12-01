@@ -71,7 +71,6 @@ section {
 
 /* Particel Background */
 .particle-container {
-  position: relative;
   min-height: 100vh;
   background: #000;
   overflow: hidden;
@@ -82,7 +81,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 0;
+  z-index: 1;
 }
 
 .content-layer {
@@ -793,7 +792,7 @@ section {
 /* Separator line */
 .separator-pulse {
   min-height: 4px;
-  margin: 85px 0;
+  margin: 90px 0;
   position: relative;
   overflow: hidden;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
