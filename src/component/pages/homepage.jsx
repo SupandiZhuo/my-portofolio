@@ -95,7 +95,7 @@ const Homepage = () => {
         particle.update();
         particle.draw();
       });
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.6z)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.6)";
       ctx.lineWidth = 0.5;
 
       for (let i = 0; i < particles.length; i++) {
