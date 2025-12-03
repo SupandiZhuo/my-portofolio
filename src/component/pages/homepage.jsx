@@ -358,7 +358,7 @@ const Homepage = () => {
                 <div className="project-card">
                   <img
                     src="./Project-Pic/TaskManager.png"
-                    alt="Production Schedule Optimization"
+                    alt="Task Manager"
                   />
                   <div className="project-info">
                     <h3>Task Manager</h3>
